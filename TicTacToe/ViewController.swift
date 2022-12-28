@@ -49,7 +49,7 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         initBoard()
-        //Firebase for player 1
+        //Firebase for players
         var docRef = database.document("TicTacToe/player1")
         docRef.addSnapshotListener{ [weak self] snapshot, error in
             guard let data = snapshot?.data(), error == nil else {
@@ -65,7 +65,7 @@ class ViewController: UIViewController
                 self?.player1 = text
             }
         }
-        //Firebase for player 2
+        
         docRef = database.document("TicTacToe/player2")
         docRef.addSnapshotListener{ [weak self] snapshot, error in
             guard let data = snapshot?.data(), error == nil else {
