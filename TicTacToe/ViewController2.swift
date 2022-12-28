@@ -33,7 +33,7 @@ class ViewController2: UIViewController, UITextFieldDelegate {
         player2TextField.resignFirstResponder()
     }
     
-    //Save data for players
+    //Save data for players usernames
     func saveDataForPlayer1(text: String) {
         let docRef = database.document("TicTacToe/player1")
         docRef.setData(["text": text])
