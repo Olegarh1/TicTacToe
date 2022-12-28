@@ -81,7 +81,7 @@ class ViewController: UIViewController
                 self?.player2 = text
             }
         }
-        //Firebase for noughts score
+        //Firebase for noughts and crosses score
         docRef = database.document("TicTacToe/Noughts")
         docRef.addSnapshotListener{ [weak self] snapshot, error in
             guard let data = snapshot?.data(), error == nil else {
@@ -96,7 +96,7 @@ class ViewController: UIViewController
                 self?.score2Label.text = String(text)
             }
         }
-        //Firebase for crosses score
+        
         docRef = database.document("TicTacToe/Cross")
         docRef.addSnapshotListener{ [weak self] snapshot, error in
             guard let data = snapshot?.data(), error == nil else {
